@@ -1,0 +1,1 @@
+export const getAllTasks = (state) => state.task.allTasks.filter(t => !t.isDeleted);
