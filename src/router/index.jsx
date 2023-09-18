@@ -4,6 +4,7 @@ import TaskDetail from "../pages/TaskDetail";
 import CreateTask from "../pages/CreateTask";
 import UpdateTask from "../pages/UpdateTask";
 import PageNotFound from "../pages/PageNotFound";
+import Trash from "../pages/Trash";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: '/task',
     element: <TaskList />
+  },
+  {
+    path: '/trash',
+    element: <Trash />
   },
   {
     path: '/task-detail/:id',

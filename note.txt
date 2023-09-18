@@ -9,11 +9,12 @@ Task:
 
 Features:
 - Task list [DONE]
+- Task detail [DONE]
 - Task form
   + Create a new task [DONE]
-  + Update a task
+  + Update a task [DONE]
     + Update status [DONE]
-    + Update info 
+    + Update info [DONE]
 - Delete a task
   + Soft Delete [DONE]
   + Hard Delete

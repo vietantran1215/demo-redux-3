@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { softDeleteTask, updateStatus } from "../store/slices/task.slice";
-import { getAllTasks } from "../store/selectors/task.selector";
+import { hardDeleteTask, updateStatus } from "../store/slices/task.slice";
+import { getAllDeletedTasks } from "../store/selectors/task.selector";
 
-const TaskList = () => {
+const Trash = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector(getAllTasks);
+  const tasks = useSelector(getAllDeletedTasks);
 
   const handleSoftDelete = (taskId) => {
-    // SOFT DELETE
-    const isConfirmed = window.confirm('Are you sure you want to delete?');
+    // HARD DELETE
+    const isConfirmed = window.confirm('Are you sure you want to delete? This action cannot be undone.');
 
     if (isConfirmed) {
-      dispatch(softDeleteTask(taskId));
+      dispatch(hardDeleteTask(taskId));
     }
 
   }
@@ -30,8 +30,7 @@ const TaskList = () => {
         display: 'flex',
         gap: '10px'
       }}>
-        <Link to="/create-task">Add a new task</Link>
-        <Link to="/trash">Trash</Link>
+        <Link to="/task">Back to task list</Link>
       </nav>
 
       <table border="1" className="text-center" style={{ width: '100%' }}>
@@ -68,4 +67,4 @@ const TaskList = () => {
   );
 }
 
-export default TaskList;
+export default Trash;
